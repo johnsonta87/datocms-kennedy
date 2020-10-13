@@ -2,46 +2,48 @@ import React, { useState } from 'react'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import neighbourhoods from '../utils/data'
 import Markers from './Markers'
 
-export default function LegendItem() {
+export default function LegendItem(props) {
   const [isShown, setIsShown] = useState(null);
+  const categories = [...new Set(props.data.edges.map(place => place.node.category))];
 
   return (
     <div className="map-accordion-legend">
       <Accordion>
-        {neighbourhoods.map((neighbourhood, index) => (
+        {categories.map((category, index) =>
           <Card key={index}>
             <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey={neighbourhood.id}>
-                <h3>{neighbourhood.name}</h3>
+              <Accordion.Toggle as={Button} variant="link" eventKey={index + 1}>
+                <h3>{category}</h3>
               </Accordion.Toggle>
             </Card.Header>
-            <Accordion.Collapse eventKey={neighbourhood.id}>
+            <Accordion.Collapse eventKey={index + 1}>
               <Card.Body>
                 <ol>
-                  {neighbourhood.places.map(place =>
-                    <li key={place.id}>
+                  {props.data.edges.filter(neighbourhood => (
+                    neighbourhood.node.category === category
+                  )).map(place =>
+                    <li key={place.node.id}>
                       <a
-                        data-tip={`#r-${place.id}`}
+                        data-tip={`#r-${place.node.id}`}
                         onMouseEnter={() => {
-                          setIsShown(place.id)
+                          setIsShown(place.node.id)
                         }}
                         onMouseLeave={() => {
                           setIsShown(null)
                         }}
-                      >{place.title}</a>
+                      >{place.node.title}</a>
                     </li>
                   )}
                 </ol>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
-        ))}
+        )}
       </Accordion>
 
-      <Markers show={isShown} />
+      <Markers data={props.data} show={isShown} />
     </div>
   )
 }
