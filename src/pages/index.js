@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import Layout from "../components/layouts/layout"
-import NeighbourhoodMap from '../components/Map/NeighbourhoodMap'
+import Map from '../components/Map/Map'
 import ContentRow from '../components/ContentRow'
 import Register from '../components/Register/Register'
 
@@ -21,6 +21,8 @@ const Home = ({ data: { home, amenities, register } }) => (
       image={home.amenitiesImage}
       amenities={amenities}
     />
+
+    <Map />
 
     <ContentRow
       layout='right'

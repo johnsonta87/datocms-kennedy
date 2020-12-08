@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { Image } from 'react-bootstrap'
-import Button from 'react-bootstrap/Button'
+import { Link } from 'react-scroll'
 
 export default function hero({ sitename, logo, image, intro }) {
 
@@ -22,7 +22,15 @@ export default function hero({ sitename, logo, image, intro }) {
           />
         </Row>
         <Row className="justify-content-center">
-          <Button variant="primary" className="hero-btn">Register Now</Button>
+          <Link
+            activeClass="active"
+            to="register"
+            spy={true}
+            smooth={true}
+            variant="primary"
+            className="hero-btn">
+            Register Now
+          </Link>
         </Row>
       </Container>
     </div>

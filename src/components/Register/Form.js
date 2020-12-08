@@ -5,7 +5,7 @@ import { init, sendForm } from 'emailjs-com';
 init('user_8do5i87Ii765gdJI1jRcq');
 
 export default function Form() {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const errorMsg = 'This field is required';
   const [contactNumber, setContactNumber] = useState("000000");
 
@@ -98,7 +98,10 @@ export default function Form() {
 
         <div className="form-field">
           <input type='hidden' name='contact_number' value={contactNumber} />
-          <Button variant="primary" type="submit" className="btn-reg">Register Now</Button>
+
+          <div className="form-submit">
+            <Button variant="primary" type="submit" className="btn-reg">Register Now</Button>
+          </div>
         </div>
       </div>
     </form>

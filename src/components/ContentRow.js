@@ -4,7 +4,7 @@ import { Image } from 'react-bootstrap'
 export default function ContentRow({ heading, content, image, amenities, layout }) {
 
   return (
-    <section className={`section_content ${layout === 'left' ? 'ct-left-img-right' : 'ct-right-img-left'} `}>
+    <section className={`section_content ${layout === 'left' ? 'ct-left-img-right' : 'ct-right-img-left'}`}>
       <div className={`column_content__block ${layout}`}>
         <h2 className="section_heading"
           dangerouslySetInnerHTML={{

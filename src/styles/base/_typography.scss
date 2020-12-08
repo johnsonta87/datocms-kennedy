@@ -29,12 +29,16 @@ h6 {
 }
 
 h2.section_heading {
-  font-size: 6rem;
+  font-size: 3.75rem;
   font-family: $headings-font !important;
   text-transform: uppercase;
   color: $secondary-color;
   line-height: 1;
   font-weight: 400;
+
+  @media screen and (min-width: 520px) {
+    font-size: 6rem;
+  }
 
   @media screen and (min-width: 1024px) {
     font-size: 7rem;

@@ -1,6 +1,11 @@
 ::-webkit-scrollbar-thumb {
   background: $primary-color;
   border-radius: 10px;
+  transition: background 0.2s linear;
+  -webkit-transition: background 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  -ms-transition: background 0.2s linear;
+  -o-transition: background 0.2s linear;
 
   &:hover {
     background: #eecf93;

@@ -1,4 +1,6 @@
-.btn-primary {
+.btn-primary,
+.hero-btn {
+  cursor: pointer;
   font-family: $body-font;
   position: relative;
   padding: 15px 40px;
@@ -29,6 +31,7 @@
     border-color: $secondary-color;
     background-color: $secondary-color;
     color: $white-color;
+    box-shadow: none;
   }
 }
 
