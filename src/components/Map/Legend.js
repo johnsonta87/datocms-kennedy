@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import Markers from './Markers'
 
-export default function LegendItem(props) {
+export default function Legend(props) {
   const [isShown, setIsShown] = useState(null);
   const categories = [...new Set(props.data.edges.map(place => place.node.category))];
 
@@ -25,7 +24,7 @@ export default function LegendItem(props) {
                     neighbourhood.node.category === category
                   )).map(place =>
                     <li key={place.node.id}>
-                      <a
+                      <button
                         data-tip={`#r-${place.node.id}`}
                         onMouseEnter={() => {
                           setIsShown(place.node.id)
@@ -33,7 +32,7 @@ export default function LegendItem(props) {
                         onMouseLeave={() => {
                           setIsShown(null)
                         }}
-                      >{place.node.title}</a>
+                      >{place.node.title}</button>
                     </li>
                   )}
                 </ol>
@@ -42,8 +41,6 @@ export default function LegendItem(props) {
           </Card>
         )}
       </Accordion>
-
-      <Markers data={props.data} show={isShown} />
     </div>
   )
 }

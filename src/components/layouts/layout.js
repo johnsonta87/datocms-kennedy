@@ -4,10 +4,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
+import Hero from './hero'
+import Footer from './footer'
 
-import "../../styles/index.sass";
+import "../../styles/index.scss";
 
 const TemplateWrapper = ({ children }) => {
   return (
@@ -26,29 +26,48 @@ const TemplateWrapper = ({ children }) => {
             seoMetaTags {
               ...GatsbyDatoCmsSeoMetaTags
             }
+            heroImage {
+              isImage
+              url
+              alt
+            }
+            logo {
+              isImage
+              url
+              alt
+            }
+            introText
           }
         }
       `}
       render={data => (
-        <div>
+        <>
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
           />
 
-          <Container>
-            <Row>
-              {children}
-            </Row>
-          </Container>
-        </div>
+          <Hero
+            sitename={data.datoCmsSite.globalSeo.siteName}
+            logo={data.datoCmsHome.logo}
+            image={data.datoCmsHome.heroImage}
+            intro={data.datoCmsHome.introText}
+          />
+
+          <main>
+            {children}
+          </main>
+          <Footer
+            sitename={data.datoCmsSite.globalSeo.siteName} />
+        </>
       )}
     />
   );
 };
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.object
+  // children: PropTypes.object
+  children: PropTypes.node.isRequired
 };
 
 export default TemplateWrapper;

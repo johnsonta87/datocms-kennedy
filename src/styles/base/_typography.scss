@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap");
+
+body {
+  font-family: $body-font;
+}
+
+a {
+  font-weight: 500;
+  transition: 0.2s linear;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -ms-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+
+  &:hover {
+    color: $dark-green-color;
+    text-decoration: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headings-font;
+}
+
+h2.section_heading {
+  font-size: 6rem;
+  font-family: $headings-font !important;
+  text-transform: uppercase;
+  color: $secondary-color;
+  line-height: 1;
+  font-weight: 400;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 7rem;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 8rem;
+  }
+}

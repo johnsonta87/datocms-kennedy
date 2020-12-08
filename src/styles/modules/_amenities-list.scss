@@ -1,0 +1,31 @@
+.amenities_list {
+  list-style: none;
+  padding: 0;
+  margin: 25px auto 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+
+  li {
+    display: flex;
+    margin-top: 25px;
+    align-content: center;
+    flex: 1 50%;
+    align-items: center;
+    padding-right: 3%;
+
+    img {
+      width: 50px;
+      height: auto;
+      margin: 0 15px 15px 0;
+    }
+
+    h5 {
+      font-family: $body-font;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}

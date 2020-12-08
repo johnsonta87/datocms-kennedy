@@ -1,0 +1,25 @@
+@import "~bootstrap/scss/bootstrap";
+
+// 1 - BASE
+@import "./base/variables/colors";
+@import "./base/variables/fonts";
+@import "./base/variables/spacing";
+@import "./base/reset";
+@import "./base/scrollbar";
+@import "./base/typography";
+@import "./base/form";
+@import "./base/buttons";
+
+// 2 - LAYOUT
+@import "./layout/masthead";
+@import "./layout/footer";
+
+// 3 - MODULES
+@import "./modules/sections";
+@import "./modules/amenities-list";
+@import "./modules/hero";
+@import "./modules/map";
+@import "./modules/register";
+
+// 4 - STATE
+@import "./state/mediaqueries";

@@ -1,0 +1,53 @@
+.hero {
+  position: relative;
+  padding: 15% 0;
+  margin-bottom: 70px;
+  background-color: $black-color;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 5% 0;
+    height: 100vh;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    max-width: 250px;
+
+    @media screen and (min-width: 768px) {
+      max-width: 350px;
+    }
+  }
+
+  .hero-headline {
+    margin-top: 30px;
+    color: $white-color;
+  }
+
+  .hero-btn {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-top: 30px;
+  }
+}
