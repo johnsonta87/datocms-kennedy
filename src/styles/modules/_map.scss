@@ -27,6 +27,12 @@
   }
 }
 
+.map-subheading {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-bottom: 50px !important;
+}
+
 .accordion {
   .card {
     border: 0;
@@ -42,6 +48,9 @@
       padding: 0;
       border-bottom: 1px solid $secondary-color;
       margin-bottom: 0;
+
+      .btn-link {
+      }
     }
 
     .card-body {
@@ -55,10 +64,61 @@
 }
 
 .marker-category {
-  padding: 10px;
-  font-size: 18px !important;
+  position: relative;
+  padding: 10px 15px 10px 60px !important;
   font-weight: 500;
-  color: $secondary-color;
+  transition: all 0.15s linear;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    top: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+
+  &:after {
+    background-image: url("../images/plus.svg");
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    right: 10px;
+    top: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+
+  > h3 {
+    font-size: 18px !important;
+    font-weight: 500;
+    color: $secondary-color;
+  }
+
+  &.active {
+    h3 {
+      color: $white-color;
+    }
+  }
 }
 
 .marker-pin {
@@ -69,7 +129,86 @@
   -moz-transition: height 0.25s linear;
   -ms-transition: height 0.25s linear;
   -o-transition: height 0.25s linear;
+}
 
+.marker-category-header {
   &.active {
+    .marker-category {
+      &:before {
+        filter: brightness(0) invert(1);
+        -webkit-filter: brightness(0) invert(1);
+      }
+      &:after {
+        background-image: url("../images/minus.svg");
+        height: 2px;
+        filter: brightness(0) invert(1);
+        -webkit-filter: brightness(0) invert(1);
+      }
+    }
+    .restaurants-category {
+      color: $white;
+      background-color: $restaurant-color;
+    }
+
+    .cafes--coffee-shops-category {
+      color: $white;
+      background-color: $cafe-color;
+    }
+
+    .schools--daycare-category {
+      color: $white;
+      background-color: $schools-color;
+    }
+
+    .parks--recreation-category {
+      color: $white;
+      background-color: $parks-color;
+    }
+
+    .hospitals--clinics-category {
+      color: $white;
+      background-color: $hospital-color;
+    }
+
+    .shops--grocers-category {
+      color: $white;
+      background-color: $shops-color;
+    }
+  }
+}
+
+.restaurants-category {
+  &:before {
+    background-image: url("../images/restaurants-icon.svg");
+  }
+}
+
+.cafes--coffee-shops-category {
+  &:before {
+    background-image: url("../images/cafe-icon.svg");
+  }
+}
+
+.schools--daycare-category {
+  &:before {
+    background-image: url("../images/school-icon.svg");
+  }
+}
+
+.parks--recreation-category {
+  &:before {
+    background-image: url("../images/parks-icon.svg");
+  }
+}
+
+.hospitals--clinics-category {
+  &:before {
+    background-image: url("../images/hospital-icon.svg");
+  }
+}
+
+.shops--grocers-category {
+  &:before {
+    background-image: url("../images/shop-icon.svg");
   }
 }
