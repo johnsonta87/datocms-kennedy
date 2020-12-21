@@ -6,7 +6,8 @@ import Markers from './Markers'
 import { convertToSlug } from '../../utils/helpers'
 
 export default function LegendItem(props) {
-  const [isShown, setIsShown] = useState(null);
+  const [showCatMarkers, setCatMarkers] = useState(false);
+  const [showMarker, setShowMarker] = useState(null);
   const categories = [...new Set(props.data.edges.map(place => place.node.category))];
 
   return (
@@ -18,7 +19,16 @@ export default function LegendItem(props) {
           {categories.map((category, index) =>
             <Card key={index}>
               <Card.Header>
-                <Accordion.Toggle as={Button} variant="link" eventKey={index + 1}>
+                <Accordion.Toggle
+                  as={Button}
+                  variant="link"
+                  eventKey={index + 1}
+                  onMouseEnter={() => {
+                    setCatMarkers(true)
+                  }}
+                  onMouseLeave={() => {
+                    setCatMarkers(false)
+                  }}>
                   <h3 className={`${convertToSlug(category)}-category marker-category`}>{category}</h3>
                 </Accordion.Toggle>
               </Card.Header>
@@ -33,10 +43,10 @@ export default function LegendItem(props) {
                           className={`${convertToSlug(place.node.category)}-inner-cat`}
                           data-tip={`#r-${place.node.id}`}
                           onMouseEnter={() => {
-                            setIsShown(place.node.id)
+                            setShowMarker(place.node.id)
                           }}
                           onMouseLeave={() => {
-                            setIsShown(null)
+                            setShowMarker(null)
                           }}
                         >
                           {place.node.title}
@@ -52,7 +62,10 @@ export default function LegendItem(props) {
       </div>
 
       <div className="column_map__block right">
-        <Markers data={props.data} show={isShown} />
+        <Markers
+          categoryMarkers={showCatMarkers}
+          data={props.data}
+          show={showMarker} />
       </div>
     </>
   )

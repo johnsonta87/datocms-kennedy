@@ -7,9 +7,8 @@ import { Link } from 'react-scroll'
 export default function hero({ sitename, logo, image, intro }) {
 
   return (
-    <div className="hero" style={{
-      backgroundImage: "url(" + image.url + ")"
-    }}>
+    <div className="hero">
+      <Image className="bg-image hero-bg-image" src={image.url} alt={`${image.alt || sitename} Exterior View`} fluid />
       <Container className="hero-container">
         <Row className="justify-content-center">
           <Image className="logo" src={logo.url} alt={logo.alt || sitename} fluid />

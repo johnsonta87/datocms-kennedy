@@ -33,9 +33,8 @@ export default function ContentRow({ heading, content, image, amenities, layout 
 
       {image.isImage &&
         <div className="column_image__block">
-          <div className="image_bg__block" style={{
-            backgroundImage: "url(" + image.url + ")"
-          }}>
+          <div className="image_bg__block">
+            <Image className="bg-image" src={image.url} alt={image.alt} fluid />
           </div>
         </div>
       }
