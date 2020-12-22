@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Accordion from 'react-bootstrap/Accordion'
+import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Markers from './Markers'
 import NeighbourhoodListItem from './NeighbourhoodListItem'
@@ -8,6 +9,7 @@ import { convertToSlug } from '../../utils/helpers'
 
 
 export default function LegendItem({ data }) {
+  const [pins, setPins] = useState(null);
   const categories = [...new Set(data.edges.map(place => place.node.category))];
 
   return (
@@ -17,11 +19,16 @@ export default function LegendItem({ data }) {
         <p className="map-subheading">Explore what’s at your doorstep</p>
         <Accordion defaultActiveKey="0">
           {categories.map((category, index) =>
-            <Card key={index}>
-              <ContextAwareToggle eventKey={index + 1}>
-                <div className={`${convertToSlug(category)}-category marker-category`}>{category}</div>
+            <Card key={index} className="map-card">
+              <ContextAwareToggle
+                eventKey={index + 1}>
+                <div
+                  className={`${convertToSlug(category)}-category marker-category`}
+                >
+                  {category}
+                </div>
               </ContextAwareToggle>
-              <Accordion.Collapse eventKey={index + 1}>
+              <Accordion.Collapse id={`list-${index + 1}`} eventKey={index + 1}>
                 <Card.Body>
                   <ol>
                     {data.edges.filter(neighbourhood => (
@@ -30,6 +37,19 @@ export default function LegendItem({ data }) {
                       <NeighbourhoodListItem key={place.node.id} place={place} />
                     )}
                   </ol>
+
+
+                  <div className="map-markers">
+                    <ul>
+                      {data.edges.filter(neighbourhood => (
+                        neighbourhood.node.category.includes(category)
+                      )).map(marker =>
+                        <Markers
+                          key={marker.node.id}
+                          marker={marker} />
+                      )}
+                    </ul>
+                  </div>
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
@@ -38,8 +58,6 @@ export default function LegendItem({ data }) {
       </div>
 
       <div className="column_map__block right">
-        <Markers
-          data={data} />
       </div>
     </>
   );

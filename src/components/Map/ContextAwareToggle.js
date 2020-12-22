@@ -18,7 +18,7 @@ export default function ContextAwareToggle({ children, eventKey, callback }) {
       <button
         type="button"
         onClick={decoratedOnClick}
-        className={`marker-category-header${isCurrentEventKey && ' active'}`}
+        className={`marker-category-header${isCurrentEventKey ? ' active' : ''}`}
       >
         {children}
       </button>

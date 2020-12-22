@@ -35,6 +35,7 @@
 
 .accordion {
   .card {
+    background-color: transparent;
     border: 0;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -61,12 +62,15 @@
       }
     }
   }
+
+  .map-card {
+    position: inherit;
+  }
 }
 
 .marker-category {
   position: relative;
   padding: 10px 15px 10px 60px !important;
-  font-weight: 500;
   transition: all 0.15s linear;
   -webkit-transition: all 0.15s linear;
   -moz-transition: all 0.15s linear;
@@ -121,17 +125,24 @@
   }
 }
 
-.marker-pin {
-  display: block;
-  overflow: hidden;
-  transition: height 0.25s linear;
-  -webkit-transition: height 0.25s linear;
-  -moz-transition: height 0.25s linear;
-  -ms-transition: height 0.25s linear;
-  -o-transition: height 0.25s linear;
+.map-markers {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .marker-pin {
+    overflow: hidden;
+    transition: height 0.25s linear;
+    -webkit-transition: height 0.25s linear;
+    -moz-transition: height 0.25s linear;
+    -ms-transition: height 0.25s linear;
+    -o-transition: height 0.25s linear;
+  }
 }
 
 .marker-category-header {
+  min-width: 325px;
+
   &.active {
     .marker-category {
       &:before {

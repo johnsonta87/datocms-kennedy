@@ -45,7 +45,9 @@ const TemplateWrapper = ({ children }) => {
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
-          />
+          >
+            <html lang="en" />
+          </HelmetDatoCms>
 
           <Hero
             sitename={data.datoCmsSite.globalSeo.siteName}

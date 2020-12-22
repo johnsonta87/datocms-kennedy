@@ -7,8 +7,14 @@ import { Link } from 'react-scroll'
 export default function hero({ sitename, logo, image, intro }) {
 
   return (
-    <div className="hero">
-      <Image className="bg-image hero-bg-image" src={image.url} alt={`${image.alt || sitename} Exterior View`} fluid />
+    <section className="hero">
+      <Image
+        className="bg-image hero-bg-image"
+        src={image.url}
+        alt={`${image.alt || sitename} Exterior View`}
+        fluid
+        role="banner"
+        aria-label="Hero Image" />
       <Container className="hero-container">
         <Row className="justify-content-center">
           <Image className="logo" src={logo.url} alt={logo.alt || sitename} fluid />
@@ -32,6 +38,6 @@ export default function hero({ sitename, logo, image, intro }) {
           </Link>
         </Row>
       </Container>
-    </div>
+    </section>
   )
 }
