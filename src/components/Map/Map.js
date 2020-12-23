@@ -13,6 +13,8 @@ export default function Map() {
                 id
                 title
                 category
+                leftCssPosition
+                topCssPosition
               }
             }
           }

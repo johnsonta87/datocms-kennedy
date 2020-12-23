@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Accordion from 'react-bootstrap/Accordion'
-import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Markers from './Markers'
 import NeighbourhoodListItem from './NeighbourhoodListItem'
@@ -9,15 +8,14 @@ import { convertToSlug } from '../../utils/helpers'
 
 
 export default function LegendItem({ data }) {
-  const [pins, setPins] = useState(null);
   const categories = [...new Set(data.edges.map(place => place.node.category))];
 
   return (
     <>
-      <div className="column_content__block left">
+      <div className="column_content__block left neighbourhood-header">
         <h2 className="section_heading">Door<br />Step</h2>
         <p className="map-subheading">Explore what’s at your doorstep</p>
-        <Accordion defaultActiveKey="0">
+        <Accordion defaultActiveKey="1">
           {categories.map((category, index) =>
             <Card key={index} className="map-card">
               <ContextAwareToggle
@@ -38,7 +36,6 @@ export default function LegendItem({ data }) {
                     )}
                   </ol>
 
-
                   <div className="map-markers">
                     <ul>
                       {data.edges.filter(neighbourhood => (
@@ -48,6 +45,7 @@ export default function LegendItem({ data }) {
                           key={marker.node.id}
                           marker={marker} />
                       )}
+                      <span className="main_marker"></span>
                     </ul>
                   </div>
                 </Card.Body>
@@ -57,7 +55,10 @@ export default function LegendItem({ data }) {
         </Accordion>
       </div>
 
-      <div className="column_map__block right">
+      <div className="map-container">
+        <div className="map-img">
+          <span className="main_marker"></span>
+        </div>
       </div>
     </>
   );

@@ -13,7 +13,6 @@ export default function hero({ sitename, logo, image, intro }) {
         src={image.url}
         alt={`${image.alt || sitename} Exterior View`}
         fluid
-        role="banner"
         aria-label="Hero Image" />
       <Container className="hero-container">
         <Row className="justify-content-center">
