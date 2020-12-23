@@ -45,7 +45,7 @@ export default function LegendItem({ data }) {
                           key={marker.node.id}
                           marker={marker} />
                       )}
-                      <span className="main_marker"></span>
+                      <span className="main_marker inner_marker"></span>
                     </ul>
                   </div>
                 </Card.Body>

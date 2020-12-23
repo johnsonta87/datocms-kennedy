@@ -5,6 +5,7 @@ export default function Markers({ marker }) {
 
   return (
     <li
+      title={marker.node.title}
       className={`marker-${convertToSlug(marker.node.category)} marker-pin`}
       style={{ left: `${marker.node.leftCssPosition}`, top: `${marker.node.topCssPosition}` }}
     >
