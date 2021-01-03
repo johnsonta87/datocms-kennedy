@@ -13,7 +13,7 @@ const useForm = (callback, validate) => {
   }, [errors]);
 
   const handleSubmit = (event) => {
-    if (event) event.preventDefault();
+    //if (event) event.preventDefault();
     setErrors(validate(values));
     setIsSubmitting(true);
   };
