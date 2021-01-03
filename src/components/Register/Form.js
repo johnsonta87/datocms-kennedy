@@ -1,119 +1,105 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
+import useForm from "./useForm";
+import validate from './Validation';
 
-export default function Form() {
-  const [fname, setFname] = useState('');
-  const [lname, setLname] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [postal, setPostal] = useState('');
-  const [HOWDIDU, setHOWDIDU] = useState('');
-  const [PRICER, setPRICER] = useState('');
-  const [AREUREALTO, setAREUREALTO] = useState('');
-  const [WORKREALTR, setWORKREALTR] = useState('');
+const Form = () => {
+  const [HOWDIDU, setHOWDIDU] = useState(false);
+  const [PRICER, setPRICER] = useState(false);
+  const [AREUREALTO, setAREUREALTO] = useState(false);
+  const [WORKREALTR, setWORKREALTR] = useState(false);
+  const [checked, setChecked] = useState(true);
 
-  const nameValidation = (fieldName, fieldValue) => {
-    if (fieldValue.trim() === '') {
-      return `${fieldName} is required`;
-    }
-    if (/[^a-zA-Z -]/.test(fieldValue)) {
-      return 'Invalid characters';
-    }
-    if (fieldValue.trim().length < 3) {
-      return `${fieldName} needs to be at least three characters`;
-    }
-    return null;
-  };
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+  } = useForm(register, validate);
 
-  const emailValidation = email => {
-    if (
-      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-        email,
-      )
-    ) {
-      return null;
-    }
-    if (email.trim() === '') {
-      return 'Email is required';
-    }
-    return 'Please enter a valid email';
-  };
-
-  const isEnabled =
-    fname.length > 0 &&
-    lname.length > 0 &&
-    email.length > 0 &&
-    phone.length > 0 &&
-    postal.length > 0;
-
-  const validate = {
-    firstName: name => nameValidation('First Name', name),
-    lastName: name => nameValidation('Last Name', name),
-    email: emailValidation,
-  };
+  function register() {
+    console.log('No errors, submit callback called!');
+  }
 
   return (
-    <form action="https://nottinghilltowns.us18.list-manage.com/subscribe/post?u=839fb24cef0413753d27dbc3a&amp;id=8b8f942075" method="post" name="mc-embedded-subscribe-form" noValidate id="reg-form" className="reg-form">
+    <form
+      action="https://nottinghilltowns.us18.list-manage.com/subscribe/post?u=839fb24cef0413753d27dbc3a&amp;id=8b8f942075"
+      method="post"
+      name="mc-embedded-subscribe-form"
+      noValidate
+      id="reg-form"
+      className="reg-form"
+      onSubmit={handleSubmit}>
       <div className="form-column">
         <div className="form-field">
           <input
             type="text"
-            value={fname}
             name="FNAME"
-            className=""
+            className={`input ${errors.FNAME && 'is-danger'}`}
             id="mce-FNAME"
             placeholder="First name"
-            onChange={(e) => { setFname(e.target.value) }}
-            required={true}
+            onChange={handleChange} value={values.FNAME || ''}
+            required
           />
+          {errors.FNAME && (
+            <p className="help is-danger">{errors.FNAME}</p>
+          )}
         </div>
         <div className="form-field">
           <input
             type="text"
-            value={lname}
             name="LNAME"
-            className=""
+            className={`input ${errors.LNAME && 'is-danger'}`}
             id="mce-LNAME"
             placeholder="Last name"
-            onChange={(e) => { setLname(e.target.value) }}
-            required={true}
+            onChange={handleChange} value={values.LNAME || ''}
+            required
           />
+          {errors.LNAME && (
+            <p className="help is-danger">{errors.LNAME}</p>
+          )}
         </div>
         <div className="form-field">
           <input
             type="email"
-            value={email}
             name="EMAIL"
-            className="required email"
+            className={`input email ${errors.EMAIL && 'is-danger'}`}
             id="mce-EMAIL"
             placeholder="Email"
-            onChange={(e) => { setEmail(e.target.value) }}
-            required={true}
+            onChange={handleChange} value={values.EMAIL || ''}
+            required
           />
+          {errors.EMAIL && (
+            <p className="help is-danger">{errors.EMAIL}</p>
+          )}
         </div>
         <div className="form-field">
           <input
             type="text"
             name="PHONE"
-            className=""
-            value={phone}
+            className={`input ${errors.PHONE && 'is-danger'}`}
             id="mce-PHONE"
             placeholder="Phone"
-            onChange={(e) => { setPhone(e.target.value) }}
-            required={true}
+            onChange={handleChange} value={values.PHONE || ''}
+            required
           />
+          {errors.PHONE && (
+            <p className="help is-danger">{errors.PHONE}</p>
+          )}
         </div>
         <div className="form-field">
           <input
             type="text"
-            value={postal}
             name="POSTAL"
-            className=""
+            className={`input ${errors.POSTAL && 'is-danger'}`}
             id="mce-POSTAL"
             placeholder="Postal"
-            onChange={(e) => { setPostal(e.target.value) }}
-            required={true}
+            onChange={handleChange} value={values.POSTAL || ''}
+            required
           />
+          {errors.POSTAL && (
+            <p className="help is-danger">{errors.POSTAL}</p>
+          )}
         </div>
       </div>
 
@@ -177,6 +163,22 @@ export default function Form() {
             <option value="No">No</option>
           </select>
         </div>
+
+        <div className="form-field consent-field">
+          <div className="form-check">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              checked={checked}
+              onChange={() => setChecked(!checked)}
+              required />
+            <label className="form-check-label">By checking this, you agree to receive emails from Gable View Homes, its affiliates and agents, with pricing, floor plans, and site updates.</label>
+
+            {!checked && (
+              <p className="help is-danger">Consent is required</p>
+            )}
+          </div>
+        </div>
       </div>
       <div className="form-column">
         <div id="mce-responses" className="clear">
@@ -195,13 +197,14 @@ export default function Form() {
             className="btn-reg"
             name="subscribe"
             id="mc-embedded-subscribe"
-            disabled={!isEnabled}
-            aria-label={!isEnabled ? "Ensure form fields are entered" : "Click to submit form"}
+            aria-label={errors ? "Ensure form fields are entered" : "Click to submit form"}
           >
-            {!isEnabled ? "Ensure all fields are entered" : "Register Now"}
+            Register Now
           </Button>
         </div>
       </div>
     </form>
-  )
-}
+  );
+};
+
+export default Form;
