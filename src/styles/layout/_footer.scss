@@ -5,6 +5,11 @@
   color: $white-color;
   text-align: center;
 
+  .footer-logo {
+    max-width: 250px;
+    margin-bottom: 25px;
+  }
+
   p {
     font-family: $body-font;
     font-size: 15px;

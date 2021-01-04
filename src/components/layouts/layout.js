@@ -38,6 +38,15 @@ const TemplateWrapper = ({ children }) => {
             }
             introText
           }
+          datoCmsFooter {
+            footerLogo {
+              isImage
+              url
+              alt
+            }
+            footerContent
+            footerLogoLink
+          }
         }
       `}
       render={data => (
@@ -60,7 +69,10 @@ const TemplateWrapper = ({ children }) => {
             {children}
           </main>
           <Footer
-            sitename={data.datoCmsSite.globalSeo.siteName} />
+            sitename={data.datoCmsSite.globalSeo.siteName}
+            logo={data.datoCmsFooter.footerLogo}
+            link={data.datoCmsFooter.footerLogoLink}
+            content={data.datoCmsFooter.footerContent} />
         </>
       )}
     />

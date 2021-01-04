@@ -4,27 +4,25 @@
   "version": "1.0.0",
   "author": "Johnson Ta <johnsonta87@gmail.com>",
   "dependencies": {
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "dotenv": "^8.1.0",
     "emailjs-com": "^2.6.4",
-    "gatsby": "^2.22.10",
-    "gatsby-image": "^2.2.34",
+    "gatsby": "^2.29.3",
+    "gatsby-image": "^2.8.0",
     "gatsby-plugin-manifest": "^2.9.1",
     "gatsby-plugin-offline": "^3.7.1",
-    "gatsby-plugin-react-helmet": "^3.1.16",
-    "gatsby-plugin-sass": "^2.1.24",
-    "gatsby-plugin-sharp": "^2.6.38",
-    "gatsby-source-datocms": "^2.2.4",
-    "gatsby-source-filesystem": "^2.1.40",
-    "gatsby-transformer-remark": "^2.6.39",
-    "gatsby-transformer-sharp": "^2.5.18",
-    "google-maps-react": "^2.0.6",
+    "gatsby-plugin-react-helmet": "^3.7.0",
+    "gatsby-plugin-sass": "^2.8.0",
+    "gatsby-plugin-sharp": "^2.11.2",
+    "gatsby-source-datocms": "^2.5.7",
+    "gatsby-source-filesystem": "^2.8.1",
+    "gatsby-transformer-remark": "^2.13.1",
+    "gatsby-transformer-sharp": "^2.9.0",
     "node-sass": "^4.13.0",
-    "react": "^16.10.2",
-    "react-bootstrap": "^1.3.0",
-    "react-dom": "^16.10.2",
+    "react": "^16.14.0",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.14.0",
     "react-helmet": "^5.2.0",
-    "react-hook-form": "^6.12.2",
     "react-scroll": "^1.8.1"
   },
   "keywords": [
@@ -38,7 +36,7 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "^10.1.0",
     "prettier": "^1.17.0"
   }
 }

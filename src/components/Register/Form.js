@@ -165,13 +165,13 @@ const Form = () => {
 
         <div className="form-field consent-field">
           <div className="form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              checked={checked}
-              onChange={() => setChecked(!checked)}
-              required />
-            <label className="form-check-label">By checking this, you agree to receive emails from Gable View Homes, its affiliates and agents, with pricing, floor plans, and site updates.</label>
+            <label className="form-check-label">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                checked={checked}
+                onChange={() => setChecked(!checked)}
+                required />By checking this, you agree to receive emails from Gable View Homes, its affiliates and agents, with pricing, floor plans, and site updates.</label>
 
             {!checked && (
               <p className="help is-danger">Consent is required</p>
