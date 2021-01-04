@@ -2,6 +2,8 @@ import React from 'react'
 import { Image } from 'react-bootstrap'
 
 export default function footer({ sitename, logo, link, content }) {
+  const today = new Date();
+
   return (
     <footer className="footer">
       <a href={link} target="_blank" rel="noopener noreferrer">
@@ -14,7 +16,7 @@ export default function footer({ sitename, logo, link, content }) {
           aria-label={`${logo.alt || sitename} Logo`} />
       </a>
 
-      <p>{content}</p>
+      <p>© {today.getFullYear()} {content}</p>
     </footer>
   )
 }
