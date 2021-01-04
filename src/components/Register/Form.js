@@ -26,7 +26,6 @@ const Form = () => {
       action="https://nottinghilltowns.us18.list-manage.com/subscribe/post?u=839fb24cef0413753d27dbc3a&amp;id=8b8f942075"
       method="post"
       name="mc-embedded-subscribe-form"
-      noValidate
       id="reg-form"
       className="reg-form"
       onSubmit={handleSubmit}>
@@ -111,9 +110,9 @@ const Form = () => {
             id="mce-HOWDIDU"
             value={HOWDIDU}
             onChange={(e) => { setHOWDIDU(e.target.value) }}
-            required={true}
+            required
           >
-            <option value="">How did you hear about us?</option>
+            <option value="" defaultValue="">How did you hear about us?</option>
             <option value="Google Search">Google Search</option>
             <option value="Newspaper">Newspaper</option>
             <option value="TV">TV</option>
@@ -127,9 +126,9 @@ const Form = () => {
             id="mce-PRICER"
             value={PRICER}
             onChange={(e) => { setPRICER(e.target.value) }}
-            required={true}
+            required
           >
-            <option value="">What's your desired price range?</option>
+            <option value="" defaultValue="">What's your desired price range?</option>
             <option value="$100,000-200,000">$100,000-200,000</option>
             <option value="$200,000-300,000">$200,000-300,000</option>
             <option value="$300,000-400,000">$300,000-400,000</option>
@@ -142,9 +141,9 @@ const Form = () => {
             id="mce-AREUREALTO"
             value={AREUREALTO}
             onChange={(e) => { setAREUREALTO(e.target.value) }}
-            required={true}
+            required
           >
-            <option value="">Are you a realtor?</option>
+            <option value="" defaultValue="">Are you a realtor?</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
@@ -156,9 +155,9 @@ const Form = () => {
             id="mce-WORKREALTR"
             value={WORKREALTR}
             onChange={(e) => { setWORKREALTR(e.target.value) }}
-            required={true}
+            required
           >
-            <option value="">Are you working with a realtor?</option>
+            <option value="" defaultValue="">Are you working with a realtor?</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
