@@ -20,12 +20,14 @@ export default function ContentRow({ heading, content, image, amenities, layout 
         {amenities &&
           <div className="amenities_list__block">
             <ul className="amenities_list">
-              {amenities.edges.map((amenity, index) => (
-                <li key={index}>
-                  <Image src={amenity.node.image.url} alt={amenity.node.image.alt} />
-                  <h5>{amenity.node.title}</h5>
-                </li>
-              ))}
+              {amenities.edges
+                .sort((a, b) => a.node.order - b.node.order)
+                .map((amenity, index) => (
+                  <li key={index}>
+                    <Image src={amenity.node.image.url} alt={amenity.node.image.alt} />
+                    <h5>{amenity.node.title}</h5>
+                  </li>
+                ))}
             </ul>
           </div>
         }

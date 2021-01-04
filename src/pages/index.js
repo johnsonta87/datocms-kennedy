@@ -75,6 +75,7 @@ export const query = graphql`
         node {
           id
           title
+          order
           image {
             isImage
             url
