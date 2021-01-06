@@ -44,6 +44,7 @@ const TemplateWrapper = ({ children }) => {
               url
               alt
             }
+            footerMainContent
             footerContent
             footerLogoLink
           }
@@ -72,6 +73,7 @@ const TemplateWrapper = ({ children }) => {
             sitename={data.datoCmsSite.globalSeo.siteName}
             logo={data.datoCmsFooter.footerLogo}
             link={data.datoCmsFooter.footerLogoLink}
+            main={data.datoCmsFooter.footerMainContent}
             content={data.datoCmsFooter.footerContent} />
         </>
       )}
