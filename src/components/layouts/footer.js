@@ -1,6 +1,5 @@
 import React from 'react'
 import { Image } from 'react-bootstrap'
-import Markdown from 'react-markdown'
 
 export default function footer({ sitename, logo, link, content, main }) {
   const today = new Date();
@@ -18,7 +17,11 @@ export default function footer({ sitename, logo, link, content, main }) {
       </a>
 
       <div className="footer-body-content">
-        <Markdown source={main} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: main
+          }}
+        />
       </div>
       <p>© {today.getFullYear()} {content}</p>
     </footer>
