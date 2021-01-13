@@ -21,9 +21,11 @@
     margin-bottom: 20px;
 
     a {
-      color: $primary-color;
+      color: $white-color;
+      font-weight: normal;
+
       &:hover {
-        color: $primary-color;
+        color: $white-color;
       }
     }
   }

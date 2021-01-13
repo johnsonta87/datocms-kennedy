@@ -114,9 +114,13 @@ const Form = () => {
           >
             <option value="" defaultValue="">How did you hear about us?</option>
             <option value="Google Search">Google Search</option>
-            <option value="Newspaper">Newspaper</option>
-            <option value="TV">TV</option>
-            <option value="Magazine">Magazine</option>
+            <option value="Buzz Buzz Homes">Buzz Buzz Homes</option>
+            <option value="A-Frame">A-Frame</option>
+            <option value="Magazine/Newspaper">Magazine/Newspaper</option>
+            <option value="Signage">Signage</option>
+            <option value="Social Media">Social Media</option>
+            <option value="Gableviewhomes.com">Gableviewhomes.com</option>
+            <option value="E-Blast">E-Blast</option>
           </select>
         </div>
         <div className="form-field">
@@ -128,10 +132,10 @@ const Form = () => {
             onChange={(e) => { setPRICER(e.target.value) }}
             required
           >
-            <option value="" defaultValue="">What's your desired price range?</option>
-            <option value="$100,000-200,000">$100,000-200,000</option>
-            <option value="$200,000-300,000">$200,000-300,000</option>
-            <option value="$300,000-400,000">$300,000-400,000</option>
+            <option value="" defaultValue="">What is your desired suite style?</option>
+            <option value="One Bedroom">One Bedroom</option>
+            <option value="One Bedroom plus Den">One Bedroom plus Den</option>
+            <option value="Two Bedroom">Two Bedroom</option>
           </select>
         </div>
         <div className="form-field">
