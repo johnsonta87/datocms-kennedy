@@ -1,6 +1,10 @@
 .map-accordion-legend {
   position: relative;
 
+  @media screen and (min-width: 1400px) {
+    margin-bottom: 200px;
+  }
+
   button {
     padding: 0;
     width: 100%;

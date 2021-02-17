@@ -13,7 +13,7 @@ export default function LegendItem({ data }) {
   return (
     <>
       <div className="column_content__block left neighbourhood-header">
-        <h2 className="section_heading">Door<br />Step</h2>
+        <h2 className="section_heading">Door Step</h2>
         <p className="map-subheading">Explore what’s at your doorstep</p>
         <Accordion defaultActiveKey="1">
           {categories.map((category, index) =>
