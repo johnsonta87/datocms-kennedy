@@ -23,24 +23,27 @@
   .hero-container {
     position: relative;
     z-index: 2;
-    padding: 15% 0;
-
-    @media screen and (min-width: 768px) {
-      padding: 5% 0;
-    }
+    padding: 10% 0;
   }
 
   .logo {
-    max-width: 250px;
+    width: 100%;
+    max-width: 200px;
 
     @media screen and (min-width: 768px) {
-      max-width: 350px;
+      max-width: 300px;
     }
   }
 
   .hero-headline {
     margin-top: 30px;
-    color: $white-color;
+    color: $primary-color;
+
+    h1 {
+      font-family: $hero-font;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
   }
 
   .hero-btn {
