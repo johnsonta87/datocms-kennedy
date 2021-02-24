@@ -67,6 +67,9 @@
 
   .reg-heading {
     flex: 1 1 60%;
-    padding: 0 3%;
+
+    > h2 {
+      padding: 0 3%;
+    }
   }
 }

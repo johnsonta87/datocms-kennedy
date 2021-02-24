@@ -6,11 +6,13 @@ export default function Register({ heading, content, image }) {
     <>
       <div id="register" className="registration-header">
         <div className="space_block"></div>
-        <h2 className="section_heading reg-heading"
-          dangerouslySetInnerHTML={{
-            __html: heading
-          }}
-        />
+        <div className="reg-heading">
+          <h2 className="section_heading"
+            dangerouslySetInnerHTML={{
+              __html: heading
+            }}
+          />
+        </div>
       </div>
       <div className="register_form__wrapper">
         {image.isImage &&
