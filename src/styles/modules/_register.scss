@@ -4,7 +4,6 @@
 
   @media screen and (min-width: 992px) {
     flex-direction: row;
-    height: 60vh;
   }
 
   .column_image__block {
@@ -15,7 +14,7 @@
 
     @media screen and (min-width: 992px) {
       width: 40%;
-      height: 60vh;
+      height: 700px;
       order: inherit;
     }
 
