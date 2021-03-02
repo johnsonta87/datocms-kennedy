@@ -5,17 +5,17 @@
   flex-wrap: nowrap;
   flex-direction: column;
   margin-top: 50px;
+  height: auto;
 
   @media screen and (min-width: 992px) {
     flex-wrap: wrap;
     flex-direction: row;
-    margin-top: 100px;
+    margin-top: 20vh;
+    height: 60vh;
   }
 
-  &.amenities_content {
-    @media screen and (min-width: 992px) {
-      margin-top: 190px;
-    }
+  @media screen and (min-width: 1400px) {
+    margin-top: 15vh;
   }
 
   h3 {
@@ -51,10 +51,8 @@
       width: 100%;
 
       @media screen and (min-width: 992px) {
-        position: absolute;
-        top: 15px;
-        width: 60%;
-        height: 485px;
+        top: 10px;
+        height: 60vh;
       }
     }
   }

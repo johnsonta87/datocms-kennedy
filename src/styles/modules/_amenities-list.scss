@@ -19,8 +19,9 @@
       padding-right: 3%;
     }
 
-    @media screen and (min-width: 1024px) and (max-width: 1400px) {
+    @media screen and (min-width: 992px) and (max-width: 1400px) {
       flex: 100%;
+      margin-top: 5px;
     }
 
     img {
@@ -28,6 +29,10 @@
       max-width: 50px;
       height: auto;
       margin: 0 15px 15px 0;
+
+      @media screen and (min-width: 992px) and (max-width: 1500px) {
+        max-width: 25px;
+      }
     }
 
     h5 {
