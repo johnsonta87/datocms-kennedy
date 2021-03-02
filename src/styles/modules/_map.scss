@@ -59,7 +59,10 @@
     }
 
     .card-body {
+      background-color: $page-bg-color;
       padding: 10px 25px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
 
       ol {
         padding: 0;
@@ -196,6 +199,10 @@
 
 .marker-category-header {
   min-width: 325px;
+
+  .marker-category {
+    background-color: $page-bg-color;
+  }
 
   &.active {
     .marker-category {
@@ -338,14 +345,21 @@
 
 .main_marker {
   position: absolute;
-  left: 73%;
-  top: 39%;
-  width: 7vw;
-  height: 7vw;
+  left: 77%;
+  top: 46%;
+  width: 3vw;
+  height: 4vw;
   z-index: 1;
   background-image: url("../images/main-pin.svg");
   background-size: 100%;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 991px) {
+    left: 78%;
+    top: 47%;
+    width: 4vw;
+    height: 5.5vw;
+  }
 
   &.inner_marker {
     @media screen and (min-width: 992px) {
