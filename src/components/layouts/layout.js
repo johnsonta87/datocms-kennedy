@@ -57,6 +57,7 @@ const TemplateWrapper = ({ children }) => {
             seo={data.datoCmsHome.seoMetaTags}
           >
             <html lang="en" />
+            <script async data-community-embed-id="5f60fb85-bbe7-4505-8b23-f9a448a2f895" src="https://mgu-embed.community.com/embed.js"></script>
           </HelmetDatoCms>
 
           <Hero
