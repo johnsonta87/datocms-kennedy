@@ -4,6 +4,13 @@ import Layout from "../components/layouts/layout"
 import Map from '../components/Map/Map'
 import ContentRow from '../components/ContentRow'
 import Register from '../components/Register/Register'
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-KQQLC99'
+}
+
+TagManager.initialize(tagManagerArgs)
 
 const Home = ({ data: { home, amenities, register } }) => (
   <Layout>
