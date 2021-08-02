@@ -58,6 +58,13 @@ const TemplateWrapper = ({ children }) => {
           >
             <html lang="en" />
             <script async data-community-embed-id="5f60fb85-bbe7-4505-8b23-f9a448a2f895" src="https://mgu-embed.community.com/embed.js"></script>
+            <script dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var
+        f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KQQLC99');</script>`,
+            }}
+            />
           </HelmetDatoCms>
 
           <Hero
@@ -76,6 +83,13 @@ const TemplateWrapper = ({ children }) => {
             link={data.datoCmsFooter.footerLogoLink}
             main={data.datoCmsFooter.footerMainContent}
             content={data.datoCmsFooter.footerContent} />
+
+          <noscript dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQQLC99" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe>
+        `,
+          }}
+          />
         </>
       )}
     />
